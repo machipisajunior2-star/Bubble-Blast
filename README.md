@@ -1,13 +1,15 @@
-# Webpack Template
-  This setup is ideal for building custom, lightweight single-page applications or static web sites from scratch without needing heavy framework-specific CLI tools (like Vite or Create React App), giving you direct control over your build pipeline and styling workflow.
+# Bubble Blast
+  Defend the border in Bubble Blast!
+  A colorful wave of bubbles is on the move, and they are creeping closer to the right edge of your screen. Take control of your pellet launcher, line up your targets, and blast them out of the sky before time runs out.
+    • Simple Arcade Mechanics: Just align the canon on the y-axis, shoot, and pop. Anyone can pick it up instantly!
+    • High-Speed Action: The bubbles don't stop moving—stay sharp and prioritize the closest threats.
+    • Instant Browser Play: No downloads required, just open your web browser and start blasting.
+  Will you achieve the ultimate high score, or will the bubbles push through? Play Bubble Blast now and test your reaction
 
 ## Built With:
-- webpack & webpack-cli: The core module bundler and command-line interface used to build, optimize, and manage project dependencies into static output files.
-- webpack-server (webpack-dev-server): A local development server that provides live-reloading and hot module replacement so your browser updates automatically as you edit code.
-- html-webpack-plugin: Automatically generates an HTML file (or injects your bundled JavaScript and CSS files into a template index.html), streamlining the build process.
-- sass-loader & style-loader: Compiles .scss/.sass files into standard CSS via sass-loader, while style-loader injects the compiled styles into the DOM (typically paired with css-loader).
-- babel-loader, @babel/core, & @babel/preset-env: Transpiles modern ES6+ JavaScript down to backward-compatible ES5 code so your app runs smoothly across older browsers.
-
+- Webpack
+- SCSS
+- Javascript.js
 
 # Getting Started with Webpack:
 
