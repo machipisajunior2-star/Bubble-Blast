@@ -7,6 +7,12 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
+let moveUp = false;
+let moveDown = false;
+let shoot = false;
+let touch = false;
+let touchMove = undefined;
+
 class Player {
   constructor(x, y, radius, color) {
     this.x = x
@@ -38,6 +44,16 @@ class Player {
   }
 
   update() {
+    if (moveUp && this.y - this.radius >= 0) {
+      this.y -= this.velocity
+    } else if (moveDown && this.y <= canvas.height - this.radius) {
+      this.y += this.velocity
+    }
+
+    if (touch && this.y - this.radius >= 0 && this.y <= canvas.height - this.radius) {
+      this.y = touchMove
+    }
+
     this.draw()
   }
 }
@@ -61,3 +77,45 @@ function animate() {
 
 init()
 animate()
+
+// Event Listeners
+addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowUp') {
+    moveUp = true
+  } else if (event.key === 'ArrowDown') {
+    moveDown = true
+  } else if (event.key === ' ') {
+    shoot = true
+  }
+})
+
+addEventListener('touchmove', (event) => {
+  touchMove = event.pageY
+})
+
+addEventListener('touchstart', (event) => {
+  touch = true
+  shoot = true
+  touchMove = event.pageY
+})
+
+addEventListener('touchend', () => {
+  touch = false
+  shoot = false
+})
+
+
+addEventListener('keyup', (event) => {
+  if (event.key === 'ArrowUp') {
+    moveUp = false
+  } else if (event.key === 'ArrowDown') {
+    moveDown = false
+  } else if (event.key === ' ') {
+    shoot = false
+  }
+})
+
+addEventListener('resize', () => {
+  canvas.width = innerWidth
+  canvas.height = innerHeight
+})
