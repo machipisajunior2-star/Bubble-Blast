@@ -59,22 +59,72 @@ class Player {
 }
 
 
+class Pellet {
+  constructor(x, y, radius, color) {
+    this.x = x
+    this.velocity = 10
+    this.y = y
+    this.radius = radius
+    this.color = color
+  }
+
+  draw() {
+    c.beginPath()
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    c.fillStyle = this.color
+    c.fill()
+    c.closePath()
+  }
+
+  update() {
+    this.draw()
+    this.x += this.velocity
+  }
+}
+
+
 let player
+let pellets
 const playerRadius = 40
 const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
+const projRadius = 3
+const projX = playerRadius / 3 + 30
+let posY = undefined;
 
 function init() {
   player = []
+  pellets = []
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
+  pellets.push(new Pellet(projX, posY, projRadius, 'red'))
+}
+
+function trigger() {
+    const length = pellets.length - 1;
+    if (pellets.length == 0 || pellets[length].x - projX > 30) {
+    pellets.push(new Pellet(projX, posY, projRadius, 'white'))
+    }
 }
 
 function animate() {
   const animationId = requestAnimationFrame(animate)
   c.fillStyle = "#3D3D3D"
   c.fillRect(0, 0, canvas.width, canvas.height)
+
   player.update()
+  posY = player.y
+
+  if (shoot) {
+    trigger()
+  }
+
+  pellets.forEach((pellet, i) => {
+    if (pellet.x >= canvas.width) {
+      pellets.splice(i, 1);
+    }
+    pellet.update()
+  })
 }
 
 init()
