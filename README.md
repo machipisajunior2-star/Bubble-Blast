@@ -14,6 +14,9 @@
 ## Screen shot
 ![image](https://github.com/user-attachments/assets/852417c4-ca00-4d38-974f-78b00328a69f)
 
+## Live Demo
+
+- [Netlify](https://canvasbubbleblast.netlify.app/)
 
 # Getting Started with Webpack:
 
