@@ -3,7 +3,13 @@ import './animation.js'
 import gsap from 'gsap'
 import utils, { randomIntFromRange } from './utils'
 
-
+const result = document.getElementById('result');
+const pauseBtn = document.getElementById('pause-btn')
+const controls = document.getElementById('controls')
+const scoreDisplay = document.querySelector('.score-div')
+const gameUx = document.getElementById('game-ux')
+const scoreBoard = document.querySelector('#score')
+const buttons = document.querySelectorAll('button')
 const canvas = document.querySelector('#canvas')
 const c = canvas.getContext('2d')
 
@@ -150,10 +156,13 @@ class Debris {
   }
 }
 
-// Implementation
+
+let score = 0;
+scoreBoard.innerHTML = score
+let bubbles
+let timerId = null;
 let player
 let pellets
-let bubbles
 let debris
 const playerRadius = 40
 const projRadius = 3
@@ -161,14 +170,15 @@ const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
 const projX = playerRadius / 3 + 30
 
-function init() {
+function set() {
   player = []
   pellets = []
   bubbles = []
   debris = []
+  progress = 1000
+  velocity = 1
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
-  pellets.push(new Pellet(projX, posY, projRadius, 'red'))
 }
 
 function trigger() {
@@ -180,14 +190,16 @@ function trigger() {
 
 let progress = 1000;
 function makeBubbles() {
-  setInterval(() =>{
-    const radius = randomIntFromRange(10, 55)
-    const x = randomIntFromRange(canvas.width, canvas.width * 2)
-    const y = randomIntFromRange((playerRadius * 2), canvas.height -
-                                (playerRadius * 2))
-    bubbles.push(new Bubble(x, y, radius, `hsl(${Math.random() * 255}, 50%, 50%)`))
-  }, progress)
-} 
+    if (!timerId) {
+        timerId = setInterval(() =>{
+            const radius = randomIntFromRange(10, 55)
+            const x = randomIntFromRange(canvas.width, canvas.width * 2)
+            const y = randomIntFromRange((playerRadius * 2), canvas.height -
+                                        (playerRadius * 2))
+            bubbles.push(new Bubble(x, y, radius, `hsl(${Math.random() * 255}, 50%, 50%)`))
+        }, progress)
+    }
+}
 
 // Animation Loop
 let posY = undefined;
@@ -259,9 +271,84 @@ function animate() {
 
 }
 
-init()
-animate()
-makeBubbles()
+function startGame() {
+  set()
+  animate()
+  makeBubbles()
+}
+
+function continueGame() {
+  makeBubbles()
+  animate()
+}
+
+// Event Listeners
+buttons.forEach(button => {
+  switch (button.id) {
+    case 'play-btn':
+      button.addEventListener('click', () => {
+          startGame()
+      })
+    break;
+    case 'pause-btn':
+      button.addEventListener('click', () => {
+          controls.style.display = 'grid'
+          stopAnimation()
+      })
+    break;
+    case 'continue-btn':
+      button.addEventListener('click', () => {
+          continueGame()
+          controls.style.display = 'none'
+      })
+    break;
+    case 'restart-btn':
+      button.addEventListener('click', () => {
+          startGame()
+          controls.style.display = 'none'
+          score = 0
+          scoreBoard.innerHTML = score
+      })
+    break;
+    case 'quit-btn':
+      button.addEventListener('click', () => {
+          controls.style.display = 'none'
+          endGameUi.style.display = 'grid'
+          result.innerHTML = score
+          score = 0
+          scoreDisplay.style.visibility = "hidden"
+          pauseBtn.style.visibility = "hidden"
+      })
+    break;
+    case 'play-again':
+      button.addEventListener('click', () => {
+          endGameUi.style.display = 'none'
+          startGame()
+          scoreBoard.innerHTML = score
+          scoreDisplay.style.visibility = "visible"
+          pauseBtn.style.visibility = "visible"
+      })
+    break;
+    case 'home-btn':
+      button.addEventListener('click', () => {
+          scoreBoard.innerHTML = score
+          scoreDisplay.style.visibility = "visible"
+          pauseBtn.style.visibility = "visible"
+      })
+    break;
+  }
+})
+
+addEventListener('focus', () => {
+  if (!timerId && gameUx.style.display == 'grid' &&
+      endGameUi.style.display != 'grid' && controls.style.display != 'grid') {
+      continueGame()
+  }
+})
+
+addEventListener('blur', () => {
+  stopAnimation()
+})
 
 addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp') {
