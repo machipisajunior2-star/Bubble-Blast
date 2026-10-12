@@ -1,100 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/animation.scss"
-/*!***********************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/animation.scss ***!
-  \***********************************************************************************************************************/
-(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-  font-family: "Courier New";
-}
-
-#home-ui {
-  display: grid;
-}
-
-.welcome-info {
-  display: grid;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  place-items: center;
-  place-content: center;
-  color: white;
-}
-
-.game-title {
-  text-align: center;
-  border-radius: 30px;
-  padding: 20px;
-  background-color: rgba(155, 34, 38, 0.9215686275);
-  border: 3px solid #ffbf38;
-}
-
-#play-btn {
-  background-color: #9b2226;
-  border-radius: 30px;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 20px;
-  color: white;
-  width: 20%;
-  font-weight: bolder;
-  letter-spacing: 20%;
-}
-
-#play-btn:hover {
-  border-color: white;
-}
-
-.instructions {
-  background-color: rgba(187, 61, 3, 0.9568627451);
-  width: 75%;
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 20px;
-}
-
-.instructions ul {
-  padding-left: 15px;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: smaller;
-  }
-  .instructions {
-    padding: 15px;
-  }
-  .game-title {
-    padding: 15px;
-  }
-  #play-btn {
-    width: 40%;
-  }
-}`, "",{"version":3,"sources":["webpack://./src/styling/animation.scss"],"names":[],"mappings":"AAAA;EACE,0BAAA;AACF;;AAEA;EACI,aAAA;AACJ;;AAEA;EACE,aAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,qBAAA;EACA,YAAA;AACF;;AAEA;EACE,kBAAA;EACA,mBAAA;EACA,aAAA;EACA,iDAAA;EACA,yBAAA;AACF;;AAEA;EACE,yBAAA;EACA,mBAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,UAAA;EACA,mBAAA;EACA,mBAAA;AACF;;AAEA;EACE,mBAAA;AACF;;AAEA;EACE,gDAAA;EACA,UAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;AACF;;AAEA;EACI,kBAAA;AACJ;;AAEA;EACI;IACA,kBAAA;EACF;EAEE;IACI,aAAA;EAAN;EAGE;IACI,aAAA;EADN;EAIE;IACI,UAAA;EAFN;AACF","sourcesContent":["body {\r\n  font-family: 'Courier New';\r\n}\r\n\r\n#home-ui {\r\n    display: grid;\r\n}\r\n\r\n.welcome-info {\r\n  display: grid;\r\n  position: fixed;\r\n  width: 100%;\r\n  height: 100%;\r\n  place-items: center;\r\n  place-content: center;\r\n  color: white;\r\n}\r\n\r\n.game-title {\r\n  text-align: center;\r\n  border-radius: 30px;\r\n  padding: 20px;\r\n  background-color: #9b2226eb;\r\n  border: 3px solid #ffbf38;\r\n}\r\n\r\n#play-btn {\r\n  background-color: #9b2226;\r\n  border-radius: 30px;\r\n  padding: 5px;\r\n  padding-left: 15px;\r\n  padding-right: 20px;\r\n  color: white;\r\n  width: 20%;\r\n  font-weight: bolder;\r\n  letter-spacing: 20%;\r\n}\r\n\r\n#play-btn:hover {\r\n  border-color: white;\r\n}    \r\n\r\n.instructions {\r\n  background-color: #bb3d03f4;\r\n  width: 75%;\r\n  border-radius: 20px;\r\n  padding: 30px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.instructions ul {\r\n    padding-left: 15px;\r\n}\r\n\r\n@media only screen and (max-width: 600px) {\r\n    body {\r\n    font-size: smaller;\r\n    }\r\n\r\n    .instructions {\r\n        padding: 15px;\r\n    }\r\n\r\n    .game-title {\r\n        padding: 15px;\r\n    }\r\n\r\n    #play-btn {\r\n        width: 40%;\r\n    }\r\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ },
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/main.scss"
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/main.scss ***!
@@ -119,13 +25,166 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   margin: 0;
 }
 
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 #game-ux {
   display: none;
 }
 
-#canvas {
+.score-div {
+  position: fixed;
+  padding: 15px;
+}
+
+.score-div span {
+  color: #ee9b00;
+  font-weight: bold;
+}
+
+#score {
+  color: white;
+}
+
+#end-game-ui {
   display: none;
-}`, "",{"version":3,"sources":["webpack://./src/styling/main.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;AACJ;;AAEA;EACE,aAAA;AACF;;AAEA;EACE,aAAA;AACF","sourcesContent":["body {\r\n    margin: 0;\r\n}\r\n\r\n#game-ux {\r\n  display: none;\r\n}\r\n\r\n#canvas {\r\n  display: none;\r\n}"],"sourceRoot":""}]);
+  place-items: center;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.947);
+}
+
+.result-div {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  color: #ee9b00;
+  margin-bottom: 100px;
+}
+
+#end-game-ui div span {
+  font-size: 50px;
+}
+
+#result {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.result-div strong {
+  font-size: 20px;
+}
+
+#play-again {
+  background-color: #ee9b00;
+  color: #bb3e03;
+  font-weight: bolder;
+  border-radius: 25px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#play-again:hover {
+  background-color: rgba(253, 245, 0, 0.7725490196);
+}
+
+.nav-btn {
+  display: flex;
+}
+
+#home-btn {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #0a9396;
+  margin-right: 12px;
+}
+
+#home-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#home-btn:hover {
+  background-color: #94d2bd;
+}
+
+#pause-btn {
+  position: fixed;
+  right: 8px;
+  top: 8px;
+  border-radius: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background-color: #9b2226;
+  padding: 5px;
+  width: 45px;
+  height: 35px;
+  padding-bottom: 35px;
+}
+
+#controls {
+  display: none;
+  position: fixed;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.817);
+}
+
+#controls button {
+  width: 20%;
+  border-radius: 25px;
+  background-color: #3da49d;
+  color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.audio-btn-con {
+  position: fixed;
+  left: 48vw;
+  z-index: 999;
+}
+
+.audio-btn-con button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 5px;
+  background-color: #ff0800;
+}
+
+.audio-btn-con button img {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+  .audio-btn-con {
+    left: 44vw;
+  }
+  #controls button {
+    width: 45%;
+  }
+  #play-again {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #play-btn {
+    width: 60%;
+  }
+}`, "",{"version":3,"sources":["webpack://./src/styling/main.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;AACJ;;AAEA;EACE,cAAA;EACA,WAAA;EACA,YAAA;AACF;;AAEA;EACE,aAAA;AACF;;AAEA;EACE,eAAA;EACA,aAAA;AACF;;AAEA;EACE,cAAA;EACA,iBAAA;AACF;;AAEA;EACE,YAAA;AACF;;AAEA;EACE,aAAA;EACA,mBAAA;EACA,qBAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,sCAAA;AACF;;AAEA;EACE,aAAA;EACA,qBAAA;EACA,mBAAA;EACA,cAAA;EACA,oBAAA;AACF;;AAEA;EACE,eAAA;AACF;;AAEA;EACE,mBAAA;EACA,eAAA;AACF;;AAEA;EACE,eAAA;AACF;;AAEA;EACE,yBAAA;EACA,cAAA;EACA,mBAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,mBAAA;AACF;;AAEA;EACE,iDAAA;AACF;;AAEA;EACE,aAAA;AACF;;AAEA;EACE,mBAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;AACF;;AAEA;EACE,yBAAA;AACF;;AAEA;EACE,eAAA;EACA,UAAA;EACA,QAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,oBAAA;AACF;;AAEA;EACE,aAAA;EAEA,eAAA;EACA,qBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;EACA,sCAAA;AAAF;;AAGA;EACE,UAAA;EACA,mBAAA;EACA,yBAAA;EACA,YAAA;EACA,mBAAA;EACA,aAAA;AAAF;;AAGA;EACE,eAAA;EACA,UAAA;EACA,YAAA;AAAF;;AAGA;EACE,mBAAA;EACA,WAAA;EACA,YAAA;EACA,UAAA;EACA,WAAA;EACA,yBAAA;AAAF;;AAGA;EACE,WAAA;EACA,YAAA;AAAF;;AAGE;EACE;IACE,UAAA;EAAJ;EAEE;IACE,UAAA;EAAJ;EAGE;IACE,YAAA;EADJ;AACF;AAIE;EACE;IACE,UAAA;EAFJ;AACF","sourcesContent":["body {\r\n    margin: 0;\r\n}\r\n\r\ncanvas {\r\n  display: block;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n#game-ux {\r\n  display: none;\r\n}\r\n\r\n.score-div {\r\n  position: fixed;\r\n  padding: 15px;\r\n}\r\n\r\n.score-div span {\r\n  color: #ee9b00;\r\n  font-weight: bold;\r\n}\r\n\r\n#score {\r\n  color: white;\r\n}\r\n\r\n#end-game-ui {\r\n  display: none;\r\n  place-items: center;\r\n  align-content: center;\r\n  position: fixed;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.947);\r\n}\r\n\r\n.result-div {\r\n  display: grid;\r\n  align-content: center;\r\n  place-items: center;\r\n  color: #ee9b00;\r\n  margin-bottom: 100px;\r\n}\r\n\r\n#end-game-ui div span {\r\n  font-size: 50px;\r\n}\r\n\r\n#result {\r\n  font-weight: bolder;\r\n  font-size: 40px;\r\n}\r\n\r\n.result-div strong {\r\n  font-size: 20px;\r\n}\r\n\r\n#play-again {\r\n  background-color:  #ee9b00;\r\n  color: #bb3e03;\r\n  font-weight: bolder;\r\n  border-radius: 25px;\r\n  width: 150px;\r\n  padding-top: 5px;\r\n  padding-bottom: 5px;\r\n}\r\n\r\n#play-again:hover {\r\n  background-color: #fdf500c5;\r\n}\r\n\r\n.nav-btn {\r\n  display: flex;\r\n}\r\n\r\n#home-btn {\r\n  border-radius: 100%;\r\n  width: 50px;\r\n  height: 50px;\r\n  background-color: #0a9396;\r\n  margin-right: 12px;\r\n}\r\n\r\n#home-icon {\r\n  width: 30px;\r\n  height: 30px;\r\n}\r\n\r\n#home-btn:hover {\r\n  background-color: #94d2bd;\r\n}\r\n\r\n#pause-btn {\r\n  position: fixed;\r\n  right: 8px;\r\n  top: 8px;\r\n  border-radius: 100%;\r\n  font-size: 20px;\r\n  text-align: center;\r\n  color: white;\r\n  background-color: #9b2226;\r\n  padding: 5px;\r\n  width: 45px;\r\n  height: 35px;\r\n  padding-bottom: 35px;\r\n}\r\n\r\n#controls {\r\n  display: none;\r\n  // align-items: center;\r\n  position: fixed;\r\n  align-content: center;\r\n  justify-items: center;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.817);\r\n}\r\n\r\n#controls button {\r\n  width: 20%;\r\n  border-radius: 25px;\r\n  background-color: #3da49d;\r\n  color: white;\r\n  margin-bottom: 10px;\r\n  padding: 10px;\r\n}\r\n\r\n.audio-btn-con {\r\n  position: fixed;\r\n  left: 48vw;\r\n  z-index: 999;\r\n}\r\n\r\n.audio-btn-con button {\r\n  border-radius: 100%;\r\n  width: 50px;\r\n  height: 50px;\r\n  padding: 0;\r\n  margin: 5px;\r\n  background-color: #ff0800;\r\n}\r\n\r\n.audio-btn-con button img {\r\n  width: 30px;\r\n  height: 30px;\r\n}\r\n\r\n  @media only screen and (max-width: 500px) {\r\n    .audio-btn-con {\r\n      left: 44vw;\r\n    }\r\n    #controls button {\r\n      width: 45%;\r\n    }\r\n\r\n    #play-again {\r\n      width: 100px;\r\n    }\r\n  }\r\n\r\n  @media only screen and (max-width: 300px) {\r\n    #play-btn {\r\n      width: 60%;\r\n    }\r\n  }\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6479,59 +6538,6 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 /***/ },
 
-/***/ "./src/styling/animation.scss"
-/*!************************************!*\
-  !*** ./src/styling/animation.scss ***!
-  \************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_index_js_animation_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs/index.js!./animation.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/animation.scss");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_index_js_animation_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_index_js_animation_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_index_js_animation_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_index_js_animation_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ },
-
 /***/ "./src/styling/main.scss"
 /*!*******************************!*\
   !*** ./src/styling/main.scss ***!
@@ -6858,95 +6864,6 @@ module.exports = styleTagTransform;
 
 /***/ },
 
-/***/ "./src/animation.js"
-/*!**************************!*\
-  !*** ./src/animation.js ***!
-  \**************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styling_animation_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styling/animation.scss */ "./src/styling/animation.scss");
-
-
-const animationCanvas = document.querySelector('#animation')
-const aC = animationCanvas.getContext('2d')
-
-animationCanvas.width = innerWidth
-animationCanvas.height = innerHeight
-
-animationCanvas.style.backgroundColor = '#373F51';
-
-let circles = [];
-const colors = ['#7D9C65', '#B93636', '#FF9C4C', '#FFF2A0', '#291606'];
-
-function Circulate() {
-    this.radius = Math.floor(Math.random() * 20) + 2;
-    this.x = Math.floor(Math.random() * (animationCanvas.width - (this.radius * 2) + 1) + this.radius);
-    this.dx = (Math.random() - 0.7) * 2;
-    this.y = Math.floor(Math.random() * (animationCanvas.height - (this.radius * 2) + 1) + this.radius);
-    this.dy = (Math.random() - 0.7) * 2;
-    this.color = colors[Math.floor(Math.random() * colors.length)];
-
-    this.update = function() {
-        if (this.x + this.radius > animationCanvas.width || this.x - this.radius < 0) {
-            this.dx = -this.dx;
-        }
-        if (this.y + this.radius > animationCanvas.height || this.y - this.radius < 0) {
-            this.dy = -this.dy;
-        }
-
-        this.x += this.dx;
-        this.y += this.dy;
-        this.draw();
-    };
-
-    this.draw = function() {
-        aC.beginPath();
-        aC.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        aC.fillStyle = this.color;
-        aC.fill();
-        aC.lineWidth = 1
-        aC.stroke()
-        aC.closePath()
-    };
-}
-
-function set() {
-    circles = [];
-    for (let i = 0; i < 100; i++) {
-        circles.push(new Circulate());
-    }
-}
-
-function animate() {
-    const animationId = requestAnimationFrame(animate);
-    aC.clearRect(0, 0, animationCanvas.width, animationCanvas.height);
-
-    circles.forEach((circle) => {
-        circle.update();
-    });
-    console.log('working')
-}
-
-set();
-animate();
-
-
-addEventListener('resize', function () {
-    animationCanvas.width = window.innerWidth;
-    animationCanvas.height = window.innerHeight;
-    return set();
-});
-
-addEventListener("orientationchange", function () {
-    animationCanvas.width = window.innerWidth;
-    animationCanvas.height = window.innerHeight;
-    return set();
-});
-
-/***/ },
-
 /***/ "./src/utils.js"
 /*!**********************!*\
   !*** ./src/utils.js ***!
@@ -6959,6 +6876,83 @@ function randomIntFromRange(min, max) {
 
 
 module.exports = { randomIntFromRange }
+
+/***/ },
+
+/***/ "./src/assets/bubble-popping.mp3"
+/*!***************************************!*\
+  !*** ./src/assets/bubble-popping.mp3 ***!
+  \***************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "bubble-popping.mp3";
+
+/***/ },
+
+/***/ "./src/assets/bubble-shrink-2.mp3"
+/*!****************************************!*\
+  !*** ./src/assets/bubble-shrink-2.mp3 ***!
+  \****************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "bubble-shrink-2.mp3";
+
+/***/ },
+
+/***/ "./src/assets/game-over-sound.mp3"
+/*!****************************************!*\
+  !*** ./src/assets/game-over-sound.mp3 ***!
+  \****************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "game-over-sound.mp3";
+
+/***/ },
+
+/***/ "./src/assets/game-start.mp3"
+/*!***********************************!*\
+  !*** ./src/assets/game-start.mp3 ***!
+  \***********************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "game-start.mp3";
+
+/***/ },
+
+/***/ "./src/assets/mute.png"
+/*!*****************************!*\
+  !*** ./src/assets/mute.png ***!
+  \*****************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "mute.png";
+
+/***/ },
+
+/***/ "./src/assets/shoot2.mp3"
+/*!*******************************!*\
+  !*** ./src/assets/shoot2.mp3 ***!
+  \*******************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "shoot2.mp3";
+
+/***/ },
+
+/***/ "./src/assets/volume.png"
+/*!*******************************!*\
+  !*** ./src/assets/volume.png ***!
+  \*******************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "volume.png";
 
 /***/ }
 
@@ -7015,6 +7009,16 @@ module.exports = { randomIntFromRange }
 /******/ 		}
 /******/ 	};
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	__webpack_require__.g = (function() {
+/******/ 		if (typeof globalThis === 'object') return globalThis;
+/******/ 		try {
+/******/ 			return this || new Function('return this')();
+/******/ 		} catch (e) {
+/******/ 			if (typeof window === 'object') return window;
+/******/ 		}
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop));
 /******/ 	
@@ -7024,6 +7028,29 @@ module.exports = { randomIntFromRange }
 /******/ 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 	};
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		let scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		const document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript?.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				const scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					let i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^https?:/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:|[?#].*$/g, "").replace(/\/[^/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	__webpack_require__.nc = undefined;
@@ -7038,26 +7065,48 @@ let __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styling_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styling/main.scss */ "./src/styling/main.scss");
-/* harmony import */ var _animation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animation.js */ "./src/animation.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var _assets_game_start_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/game-start.mp3 */ "./src/assets/game-start.mp3");
+/* harmony import */ var _assets_shoot2_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/shoot2.mp3 */ "./src/assets/shoot2.mp3");
+/* harmony import */ var _assets_bubble_shrink_2_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/bubble-shrink-2.mp3 */ "./src/assets/bubble-shrink-2.mp3");
+/* harmony import */ var _assets_bubble_popping_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/bubble-popping.mp3 */ "./src/assets/bubble-popping.mp3");
+/* harmony import */ var _assets_game_over_sound_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/game-over-sound.mp3 */ "./src/assets/game-over-sound.mp3");
+/* harmony import */ var _assets_mute_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/mute.png */ "./src/assets/mute.png");
+/* harmony import */ var _assets_volume_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/volume.png */ "./src/assets/volume.png");
 
 
 
 
 
 
-const canvas = document.querySelector('canvas')
+
+
+
+
+
+const canvas = document.getElementById('canvas')
+const volumeIcon = document.getElementById('volume-icon')
+const endGameUi = document.getElementById('end-game-ui')
+const result = document.getElementById('result');
+const pauseBtn = document.getElementById('pause-btn')
+const controls = document.getElementById('controls')
+const scoreDisplay = document.querySelector('.score-div')
+const gameUx = document.getElementById('game-ux')
+const scoreBoard = document.querySelector('#score')
+const audioButton = document.getElementById('audio-btn')
+const themeTrack = document.getElementById('theme-audio')
+const gameStartAudio = document.getElementById('game-start-audio')
+const shootAudio = document.getElementById('shoot-audio')
+const bubbleShrinkAudio = document.getElementById('bubble-shrink-audio')
+const bubblePopAudio = document.getElementById('bubble-pop-audio')
+const endGameAudio = document.getElementById('game-over-audio')
+const buttons = document.querySelectorAll('button')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-let moveUp = false;
-let moveDown = false;
-let shoot = false;
-let touch = false;
-let touchMove = undefined;
 class Player {
   constructor(x, y, radius, color) {
     this.x = x
@@ -7067,7 +7116,7 @@ class Player {
     this.velocity = 5
   }
 
-  draw() {
+  apply() {
     c.save()
     c.beginPath();
     c.moveTo(this.x, this.y);
@@ -7099,11 +7148,10 @@ class Player {
       this.y = touchMove
     }
 
-    this.draw()
+    this.apply()
   }
 }
 
-// pellets
 class Pellet {
   constructor(x, y, radius, color) {
     this.x = x
@@ -7113,7 +7161,7 @@ class Pellet {
     this.color = color
   }
 
-  draw() {
+  apply() {
     c.beginPath()
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
@@ -7122,13 +7170,13 @@ class Pellet {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.x += this.velocity
   }
 }
 
 let velocity = 1;
-//Bubble
+
 class Bubble {
   constructor(x, y, radius, color) {
     this.x = x
@@ -7137,7 +7185,7 @@ class Bubble {
     this.color = color
   }
 
-  draw() {
+  apply() {
     c.beginPath()
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
@@ -7148,7 +7196,7 @@ class Bubble {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.x -= velocity
     if (velocity < 6) {
       velocity += 0.0001
@@ -7157,7 +7205,6 @@ class Bubble {
 }
 
 const gravity = 0.2;
-
 const friction = 0.99
 
 class Debris {
@@ -7170,7 +7217,7 @@ class Debris {
     this.alpha = 1
   }
 
-  draw() {
+  apply() {
     c.save()
     c.globalAlpha = this.alpha
     c.beginPath()
@@ -7183,7 +7230,7 @@ class Debris {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.velocity.x *= friction
     this.velocity.y *= friction
     this.velocity.y += gravity
@@ -7193,10 +7240,12 @@ class Debris {
   }
 }
 
-// Implementation
+let score = 0;
+scoreBoard.innerHTML = score
+let bubbles
+let timerId = null;
 let player
 let pellets
-let bubbles
 let debris
 const playerRadius = 40
 const projRadius = 3
@@ -7204,40 +7253,71 @@ const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
 const projX = playerRadius / 3 + 30
 
-function init() {
-  player = []
-  pellets = []
-  bubbles = []
-  debris = []
-
-  player = new Player(playerX, playerY, playerRadius, '#7c7e83')
-  pellets.push(new Pellet(projX, posY, projRadius, 'red'))
+function playSound(soundFile, audioElement) {
+    audioElement.src = soundFile
+    try {
+        audioElement.currentTime = 0;
+        audioElement.play().catch(err => {
+            console.warn("Audio play blocked:", err);
+        });
+    } catch (e) {
+        console.error("Audio error:", e);
+    }
 }
 
 function trigger() {
     const length = pellets.length - 1;
-    if (pellets.length == 0 || pellets[length].x - projX > 30) {
-    pellets.push(new Pellet(projX, posY, projRadius, 'white'))
+    if (pellets.length == 0 || pellets[length].x - projX > 70) {
+      pellets.push(new Pellet(projX, posY, projRadius, 'white'))
+      playSound(_assets_shoot2_mp3__WEBPACK_IMPORTED_MODULE_4__, shootAudio)
     }
 }
 
 let progress = 1000;
 function makeBubbles() {
-  setInterval(() =>{
-    const radius = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.randomIntFromRange)(10, 55)
-    const x = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.randomIntFromRange)(canvas.width, canvas.width * 2)
-    const y = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.randomIntFromRange)((playerRadius * 2), canvas.height -
-                                (playerRadius * 2))
-    bubbles.push(new Bubble(x, y, radius, `hsl(${Math.random() * 255}, 50%, 50%)`))
-  }, progress)
-} 
+    if (!timerId) {
+        timerId = setInterval(() =>{
+            const radius = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.randomIntFromRange)(10, 55)
+            const x = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.randomIntFromRange)(canvas.width, canvas.width * 2)
+            const y = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.randomIntFromRange)((playerRadius * 2), canvas.height -
+                                        (playerRadius * 2))
+            bubbles.push(new Bubble(x, y, radius, `hsl(${Math.random() * 255}, 50%, 50%)`))
+        }, progress)
+    }
+}
+
+
+function set() {
+  player = []
+  pellets = []
+  bubbles = []
+  debris = []
+  progress = 1000
+  velocity = 1
+
+  player = new Player(playerX, playerY, playerRadius, '#7c7e83')
+  playSound(_assets_game_start_mp3__WEBPACK_IMPORTED_MODULE_3__, gameStartAudio)
+}
 
 // Animation Loop
+let animationId
 let posY = undefined;
+let moveUp = false;
+let moveDown = false;
+let shoot = false;
+let touch = false;
+let touchMove = undefined;
+
+function stopAnimation() {
+  cancelAnimationFrame(animationId);
+  clearInterval(timerId)
+  timerId = null
+}
 
 function animate() {
-  const animationId = requestAnimationFrame(animate)
-  c.fillStyle = "#3D3D3D"
+  animationId = requestAnimationFrame(animate)
+
+  c.fillStyle = "#373F51"
   c.fillRect(0, 0, canvas.width, canvas.height)
     if (progress > 100) {
       progress -= 0.1
@@ -7259,7 +7339,13 @@ function animate() {
 
   bubbles.forEach((bubble, i) => {
     if (bubble.x - bubble.radius <= 0) {
-      cancelAnimationFrame(animationId);
+      endGameUi.style.display = 'grid'
+      scoreDisplay.style.visibility = "hidden"
+      pauseBtn.style.visibility = "hidden"
+      result.innerHTML = score
+      score = 0
+      stopAnimation()
+      playSound(_assets_game_over_sound_mp3__WEBPACK_IMPORTED_MODULE_7__, endGameAudio)
     }
     pellets.forEach((pellet, j) => {
       const dist = Math.hypot(bubble.x - pellet.x, bubble.y - pellet.y)
@@ -7274,19 +7360,25 @@ function animate() {
                bubble.color, {
                 x: Math.cos(angleIncrement * i) * Math.random() * power,
                 y: Math.sin(angleIncrement * i) * Math.random() * power
-          }))
+            }))
           }
-        setTimeout(() => {
-        bubbles.splice(i, 1)
-        pellets.splice(j, 1)
-        }, 0)
-        } else {
           setTimeout(() => {
+            bubbles.splice(i, 1)
             pellets.splice(j, 1)
           }, 0)
-          gsap__WEBPACK_IMPORTED_MODULE_2__["default"].to(bubble, {
-            radius: bubble.radius - 10
-          })
+          score += 2
+          scoreBoard.innerHTML = score
+          playSound(_assets_bubble_popping_mp3__WEBPACK_IMPORTED_MODULE_6__, bubblePopAudio)
+        } else {
+            playSound(_assets_bubble_shrink_2_mp3__WEBPACK_IMPORTED_MODULE_5__, bubbleShrinkAudio)
+            score += 1
+            scoreBoard.innerHTML = score
+            setTimeout(() => {
+                pellets.splice(j, 1)
+            }, 0)
+            gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(bubble, {
+                radius: bubble.radius - 10
+            })
         }
       }
     })
@@ -7302,9 +7394,106 @@ function animate() {
 
 }
 
-init()
-animate()
-makeBubbles()
+function startGame() {
+  set()
+  animate()
+  makeBubbles()
+}
+
+function continueGame() {
+  makeBubbles()
+  animate()
+}
+
+// Event Listeners
+buttons.forEach(button => {
+  switch (button.id) {
+    case 'play-btn':
+      button.addEventListener('click', () => {
+          startGame()
+      })
+    break;
+    case 'pause-btn':
+      button.addEventListener('click', () => {
+          controls.style.display = 'grid'
+          stopAnimation()
+      })
+    break;
+    case 'continue-btn':
+      button.addEventListener('click', () => {
+          continueGame()
+          controls.style.display = 'none'
+      })
+    break;
+    case 'restart-btn':
+      button.addEventListener('click', () => {
+          startGame()
+          controls.style.display = 'none'
+          score = 0
+          scoreBoard.innerHTML = score
+      })
+    break;
+    case 'quit-btn':
+      button.addEventListener('click', () => {
+          controls.style.display = 'none'
+          endGameUi.style.display = 'grid'
+          result.innerHTML = score
+          score = 0
+          scoreDisplay.style.visibility = "hidden"
+          pauseBtn.style.visibility = "hidden"
+      })
+    break;
+    case 'play-again':
+      button.addEventListener('click', () => {
+          endGameUi.style.display = 'none'
+          startGame()
+          scoreBoard.innerHTML = score
+          scoreDisplay.style.visibility = "visible"
+          pauseBtn.style.visibility = "visible"
+      })
+    break;
+    case 'home-btn':
+      button.addEventListener('click', () => {
+          scoreBoard.innerHTML = score
+          scoreDisplay.style.visibility = "visible"
+          pauseBtn.style.visibility = "visible"
+          if (audioButton.style.backgroundColor == 'rgb(255, 8, 0)') {
+            themeTrack.muted = true
+          } else {
+            themeTrack.muted = false
+          }
+      })
+    break;
+    case 'audio-btn':
+      button.addEventListener('click', () => {
+      const audioElements = document.querySelectorAll('audio')
+      audioButton.blur();
+      audioElements.forEach(audioElement => {
+        if (audioElement.muted == true && audioElement.id != 'theme-audio') {
+            audioElement.muted = false
+            audioButton.style.backgroundColor = 'rgb(76, 187, 23)'
+            volumeIcon.src = _assets_volume_png__WEBPACK_IMPORTED_MODULE_9__
+        } else if (audioElement.muted == false && audioElement.id != 'theme-audio') {
+            audioElement.muted = true
+            audioButton.style.backgroundColor = 'rgb(255, 8, 0)'
+            volumeIcon.src = _assets_mute_png__WEBPACK_IMPORTED_MODULE_8__
+        }
+      })
+    })
+    break;
+  }
+})
+
+addEventListener('focus', () => {
+  if (!timerId && gameUx.style.display == 'grid' &&
+      endGameUi.style.display != 'grid' && controls.style.display != 'grid') {
+      continueGame()
+  }
+})
+
+addEventListener('blur', () => {
+  stopAnimation()
+})
 
 addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp') {
@@ -7346,6 +7535,7 @@ addEventListener('resize', () => {
   canvas.width = innerWidth
   canvas.height = innerHeight
 })
+
 })();
 
 /******/ })()
