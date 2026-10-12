@@ -1,6 +1,167 @@
 body {
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: aqua;
+    margin: 0;
 }
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#game-ux {
+  display: none;
+}
+
+.score-div {
+  position: fixed;
+  padding: 15px;
+}
+
+.score-div span {
+  color: #ee9b00;
+  font-weight: bold;
+}
+
+#score {
+  color: white;
+}
+
+#end-game-ui {
+  display: none;
+  place-items: center;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.947);
+}
+
+.result-div {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  color: #ee9b00;
+  margin-bottom: 100px;
+}
+
+#end-game-ui div span {
+  font-size: 50px;
+}
+
+#result {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.result-div strong {
+  font-size: 20px;
+}
+
+#play-again {
+  background-color:  #ee9b00;
+  color: #bb3e03;
+  font-weight: bolder;
+  border-radius: 25px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#play-again:hover {
+  background-color: #fdf500c5;
+}
+
+.nav-btn {
+  display: flex;
+}
+
+#home-btn {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #0a9396;
+  margin-right: 12px;
+}
+
+#home-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#home-btn:hover {
+  background-color: #94d2bd;
+}
+
+#pause-btn {
+  position: fixed;
+  right: 8px;
+  top: 8px;
+  border-radius: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background-color: #9b2226;
+  padding: 5px;
+  width: 45px;
+  height: 35px;
+  padding-bottom: 35px;
+}
+
+#controls {
+  display: none;
+  // align-items: center;
+  position: fixed;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.817);
+}
+
+#controls button {
+  width: 20%;
+  border-radius: 25px;
+  background-color: #3da49d;
+  color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.audio-btn-con {
+  position: fixed;
+  left: 48vw;
+  z-index: 999;
+}
+
+.audio-btn-con button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 5px;
+  background-color: #ff0800;
+}
+
+.audio-btn-con button img {
+  width: 30px;
+  height: 30px;
+}
+
+  @media only screen and (max-width: 500px) {
+    .audio-btn-con {
+      left: 44vw;
+    }
+    #controls button {
+      width: 45%;
+    }
+
+    #play-again {
+      width: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    #play-btn {
+      width: 60%;
+    }
+  }
