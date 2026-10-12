@@ -14,7 +14,6 @@ let moveDown = false;
 let shoot = false;
 let touch = false;
 let touchMove = undefined;
-
 class Player {
   constructor(x, y, radius, color) {
     this.x = x
@@ -60,7 +59,7 @@ class Player {
   }
 }
 
-
+// pellets
 class Pellet {
   constructor(x, y, radius, color) {
     this.x = x
@@ -85,7 +84,7 @@ class Pellet {
 }
 
 let velocity = 1;
-
+//Bubble
 class Bubble {
   constructor(x, y, radius, color) {
     this.x = x
@@ -113,21 +112,59 @@ class Bubble {
   }
 }
 
+const gravity = 0.2;
 
+const friction = 0.99
+
+class Debris {
+  constructor(x, y, radius, color, velocity) {
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.color = color
+    this.velocity = velocity
+    this.alpha = 1
+  }
+
+  draw() {
+    c.save()
+    c.globalAlpha = this.alpha
+    c.beginPath()
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    c.fillStyle = this.color
+    c.fill()
+    c.stroke()
+    c.closePath()
+    c.restore()
+  }
+
+  update() {
+    this.draw()
+    this.velocity.x *= friction
+    this.velocity.y *= friction
+    this.velocity.y += gravity
+    this.x += this.velocity.x
+    this.y += this.velocity.y
+    this.alpha -= 0.005
+  }
+}
+
+// Implementation
 let player
 let pellets
 let bubbles
+let debris
 const playerRadius = 40
+const projRadius = 3
 const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
-const projRadius = 3
 const projX = playerRadius / 3 + 30
-let posY = undefined;
 
 function init() {
   player = []
   pellets = []
   bubbles = []
+  debris = []
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
   pellets.push(new Pellet(projX, posY, projRadius, 'red'))
@@ -140,12 +177,10 @@ function trigger() {
     }
 }
 
-
 let progress = 1000;
 function makeBubbles() {
   setInterval(() =>{
     const radius = randomIntFromRange(10, 55)
-    console.log(radius)
     const x = randomIntFromRange(canvas.width, canvas.width * 2)
     const y = randomIntFromRange((playerRadius * 2), canvas.height -
                                 (playerRadius * 2))
@@ -153,10 +188,16 @@ function makeBubbles() {
   }, progress)
 } 
 
+// Animation Loop
+let posY = undefined;
+
 function animate() {
   const animationId = requestAnimationFrame(animate)
   c.fillStyle = "#3D3D3D"
   c.fillRect(0, 0, canvas.width, canvas.height)
+    if (progress > 100) {
+      progress -= 0.1
+    }
 
   player.update()
   posY = player.y
@@ -164,31 +205,57 @@ function animate() {
   if (shoot) {
     trigger()
   }
-
+  
   pellets.forEach((pellet, i) => {
-    if (pellet.x >= canvas.width) {
-      pellets.splice(i, 1);
+      if (pellet.x >= canvas.width) {
+        pellets.splice(i, 1);
+      }
+        pellet.update()
+  })
+
+  bubbles.forEach((bubble, i) => {
+    if (bubble.x - bubble.radius <= 0) {
+      cancelAnimationFrame(animationId);
     }
-    pellet.update()
-  })
-    bubbles.forEach((bubble, i) => {
-        if (bubble.x - bubble.radius <= 0) {
-        cancelAnimationFrame(animationId);
+    pellets.forEach((pellet, j) => {
+      const dist = Math.hypot(bubble.x - pellet.x, bubble.y - pellet.y)
+          const debrisCount = bubble.radius * 4;
+          const angleIncrement = Math.PI * 2 / debrisCount
+          const power = 8
+
+      if (dist - bubble.radius - pellet.radius < 1) {
+        if (bubble.radius < 30) {
+          for(let i = 0; i < debrisCount; i++) {
+            debris.push(new Debris(bubble.x, bubble.y, bubble.radius / 8,
+               bubble.color, {
+                x: Math.cos(angleIncrement * i) * Math.random() * power,
+                y: Math.sin(angleIncrement * i) * Math.random() * power
+          }))
+          }
+        setTimeout(() => {
+        bubbles.splice(i, 1)
+        pellets.splice(j, 1)
+        }, 0)
+        } else {
+          setTimeout(() => {
+            pellets.splice(j, 1)
+          }, 0)
+          gsap.to(bubble, {
+            radius: bubble.radius - 10
+          })
         }
-        pellets.forEach((pellet, j) => {
-            const dist = Math.hypot(bubble.x - pellet.x, bubble.y - pellet.y)
-            if (dist - bubble.radius - pellet.radius < 1) {
-                setTimeout(() => {
-                    bubbles.splice(i, 1)
-                }, 0)
-            } else {
-                gsap.to(bubble, {
-                    radius: bubble.radius - 10
-                })
-            }
-        })
-        bubble.update()
+      }
+    })
+    bubble.update()
   })
+
+  debris.forEach((d, i) => {
+    if(d.alpha < 0) {
+      debris.splice(i, 1)
+    }
+          d.update()
+  })
+
 }
 
 init()
