@@ -72,13 +72,14 @@ function init() {
 
 function animate() {
   const animationId = requestAnimationFrame(animate)
+  c.fillStyle = "#3D3D3D"
+  c.fillRect(0, 0, canvas.width, canvas.height)
   player.update()
 }
 
 init()
 animate()
 
-// Event Listeners
 addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp') {
     moveUp = true
