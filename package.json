@@ -1,7 +1,7 @@
 {
   "name": "Bubble-Blast",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bubble Blast is a fast-paced, arcade-style web game where your reflexes are your only defense.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -26,10 +26,10 @@
     "sass-loader": "^17.0.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.111.1",
-    "webpack-cli": "^7.2.3"
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
   },
   "dependencies": {
-    "gsap": "^3.15.0",
-    "webpack-dev-server": "^6.0.0"
+    "gsap": "^3.15.0"
   }
 }
