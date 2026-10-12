@@ -1,26 +1,37 @@
 import './styling/main.scss'
 import './animation.js'
-import gsap from 'gsap'
+import { gsap } from 'gsap';
 import utils, { randomIntFromRange } from './utils'
+import gameStartFile from './assets/game-start.mp3'
+import shootFile from './assets/shoot2.mp3'
+import bubbleShrinkFile from './assets/bubble-shrink-2.mp3'
+import bubblePopFile from './assets/bubble-popping.mp3'
+import gameOverFile from './assets/game-over-sound.mp3'
+import muteIcon from './assets/mute.png'
+import soundOnIcon from './assets/volume.png'
 
+const canvas = document.getElementById('canvas')
+const volumeIcon = document.getElementById('volume-icon')
+const endGameUi = document.getElementById('end-game-ui')
 const result = document.getElementById('result');
 const pauseBtn = document.getElementById('pause-btn')
 const controls = document.getElementById('controls')
 const scoreDisplay = document.querySelector('.score-div')
 const gameUx = document.getElementById('game-ux')
 const scoreBoard = document.querySelector('#score')
+const audioButton = document.getElementById('audio-btn')
+const themeTrack = document.getElementById('theme-audio')
+const gameStartAudio = document.getElementById('game-start-audio')
+const shootAudio = document.getElementById('shoot-audio')
+const bubbleShrinkAudio = document.getElementById('bubble-shrink-audio')
+const bubblePopAudio = document.getElementById('bubble-pop-audio')
+const endGameAudio = document.getElementById('game-over-audio')
 const buttons = document.querySelectorAll('button')
-const canvas = document.querySelector('#canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-let moveUp = false;
-let moveDown = false;
-let shoot = false;
-let touch = false;
-let touchMove = undefined;
 class Player {
   constructor(x, y, radius, color) {
     this.x = x
@@ -30,7 +41,7 @@ class Player {
     this.velocity = 5
   }
 
-  draw() {
+  apply() {
     c.save()
     c.beginPath();
     c.moveTo(this.x, this.y);
@@ -62,11 +73,10 @@ class Player {
       this.y = touchMove
     }
 
-    this.draw()
+    this.apply()
   }
 }
 
-// pellets
 class Pellet {
   constructor(x, y, radius, color) {
     this.x = x
@@ -76,7 +86,7 @@ class Pellet {
     this.color = color
   }
 
-  draw() {
+  apply() {
     c.beginPath()
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
@@ -85,13 +95,13 @@ class Pellet {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.x += this.velocity
   }
 }
 
 let velocity = 1;
-//Bubble
+
 class Bubble {
   constructor(x, y, radius, color) {
     this.x = x
@@ -100,7 +110,7 @@ class Bubble {
     this.color = color
   }
 
-  draw() {
+  apply() {
     c.beginPath()
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
     c.fillStyle = this.color
@@ -111,7 +121,7 @@ class Bubble {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.x -= velocity
     if (velocity < 6) {
       velocity += 0.0001
@@ -120,7 +130,6 @@ class Bubble {
 }
 
 const gravity = 0.2;
-
 const friction = 0.99
 
 class Debris {
@@ -133,7 +142,7 @@ class Debris {
     this.alpha = 1
   }
 
-  draw() {
+  apply() {
     c.save()
     c.globalAlpha = this.alpha
     c.beginPath()
@@ -146,7 +155,7 @@ class Debris {
   }
 
   update() {
-    this.draw()
+    this.apply()
     this.velocity.x *= friction
     this.velocity.y *= friction
     this.velocity.y += gravity
@@ -155,7 +164,6 @@ class Debris {
     this.alpha -= 0.005
   }
 }
-
 
 let score = 0;
 scoreBoard.innerHTML = score
@@ -170,21 +178,23 @@ const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
 const projX = playerRadius / 3 + 30
 
-function set() {
-  player = []
-  pellets = []
-  bubbles = []
-  debris = []
-  progress = 1000
-  velocity = 1
-
-  player = new Player(playerX, playerY, playerRadius, '#7c7e83')
+function playSound(soundFile, audioElement) {
+    audioElement.src = soundFile
+    try {
+        audioElement.currentTime = 0;
+        audioElement.play().catch(err => {
+            console.warn("Audio play blocked:", err);
+        });
+    } catch (e) {
+        console.error("Audio error:", e);
+    }
 }
 
 function trigger() {
     const length = pellets.length - 1;
-    if (pellets.length == 0 || pellets[length].x - projX > 30) {
-    pellets.push(new Pellet(projX, posY, projRadius, 'white'))
+    if (pellets.length == 0 || pellets[length].x - projX > 70) {
+      pellets.push(new Pellet(projX, posY, projRadius, 'white'))
+      playSound(shootFile, shootAudio)
     }
 }
 
@@ -201,12 +211,38 @@ function makeBubbles() {
     }
 }
 
+
+function set() {
+  player = []
+  pellets = []
+  bubbles = []
+  debris = []
+  progress = 1000
+  velocity = 1
+
+  player = new Player(playerX, playerY, playerRadius, '#7c7e83')
+  playSound(gameStartFile, gameStartAudio)
+}
+
 // Animation Loop
+let animationId
 let posY = undefined;
+let moveUp = false;
+let moveDown = false;
+let shoot = false;
+let touch = false;
+let touchMove = undefined;
+
+function stopAnimation() {
+  cancelAnimationFrame(animationId);
+  clearInterval(timerId)
+  timerId = null
+}
 
 function animate() {
-  const animationId = requestAnimationFrame(animate)
-  c.fillStyle = "#3D3D3D"
+  animationId = requestAnimationFrame(animate)
+
+  c.fillStyle = "#373F51"
   c.fillRect(0, 0, canvas.width, canvas.height)
     if (progress > 100) {
       progress -= 0.1
@@ -228,7 +264,13 @@ function animate() {
 
   bubbles.forEach((bubble, i) => {
     if (bubble.x - bubble.radius <= 0) {
-      cancelAnimationFrame(animationId);
+      endGameUi.style.display = 'grid'
+      scoreDisplay.style.visibility = "hidden"
+      pauseBtn.style.visibility = "hidden"
+      result.innerHTML = score
+      score = 0
+      stopAnimation()
+      playSound(gameOverFile, endGameAudio)
     }
     pellets.forEach((pellet, j) => {
       const dist = Math.hypot(bubble.x - pellet.x, bubble.y - pellet.y)
@@ -243,19 +285,25 @@ function animate() {
                bubble.color, {
                 x: Math.cos(angleIncrement * i) * Math.random() * power,
                 y: Math.sin(angleIncrement * i) * Math.random() * power
-          }))
+            }))
           }
-        setTimeout(() => {
-        bubbles.splice(i, 1)
-        pellets.splice(j, 1)
-        }, 0)
-        } else {
           setTimeout(() => {
+            bubbles.splice(i, 1)
             pellets.splice(j, 1)
           }, 0)
-          gsap.to(bubble, {
-            radius: bubble.radius - 10
-          })
+          score += 2
+          scoreBoard.innerHTML = score
+          playSound(bubblePopFile, bubblePopAudio)
+        } else {
+            playSound(bubbleShrinkFile, bubbleShrinkAudio)
+            score += 1
+            scoreBoard.innerHTML = score
+            setTimeout(() => {
+                pellets.splice(j, 1)
+            }, 0)
+            gsap.to(bubble, {
+                radius: bubble.radius - 10
+            })
         }
       }
     })
@@ -334,7 +382,29 @@ buttons.forEach(button => {
           scoreBoard.innerHTML = score
           scoreDisplay.style.visibility = "visible"
           pauseBtn.style.visibility = "visible"
+          if (audioButton.style.backgroundColor == 'rgb(255, 8, 0)') {
+            themeTrack.muted = true
+          } else {
+            themeTrack.muted = false
+          }
       })
+    break;
+    case 'audio-btn':
+      button.addEventListener('click', () => {
+      const audioElements = document.querySelectorAll('audio')
+      audioButton.blur();
+      audioElements.forEach(audioElement => {
+        if (audioElement.muted == true && audioElement.id != 'theme-audio') {
+            audioElement.muted = false
+            audioButton.style.backgroundColor = 'rgb(76, 187, 23)'
+            volumeIcon.src = soundOnIcon
+        } else if (audioElement.muted == false && audioElement.id != 'theme-audio') {
+            audioElement.muted = true
+            audioButton.style.backgroundColor = 'rgb(255, 8, 0)'
+            volumeIcon.src = muteIcon
+        }
+      })
+    })
     break;
   }
 })
