@@ -1,5 +1,5 @@
 {
-  "name": "Webpack-Template",
+  "name": "Bubble-Blast",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/machipisajunior2-star/Bubble-Blast.git"
   },
   "keywords": [],
   "bugs": {
-    "url": ""
+    "url": "https://github.com/machipisajunior2-star/Bubble-Blast.git"
   },
+  "homepage": "https://github.com/machipisajunior2-star/Bubble-Blast.git",
   "devDependencies": {
     "@babel/core": "^8.0.7",
     "@babel/preset-env": "^8.0.7",
