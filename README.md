@@ -11,6 +11,10 @@
 - SCSS
 - Javascript.js
 
+## Screen shot
+![image](https://github.com/user-attachments/assets/852417c4-ca00-4d38-974f-78b00328a69f)
+
+
 # Getting Started with Webpack:
 
 This project was bootstrapped with [Webpack](https://webpack.js.org/guides/installation/).
