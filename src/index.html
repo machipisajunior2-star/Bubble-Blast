@@ -8,6 +8,9 @@
     <title>Bubble-Blast</title>
 </head>
 <body>
+  <div class="audio-btn-con">
+      <button id="audio-btn"><img id="volume-icon" src="" alt="mute icon" /></button>
+    </div>
     <section id="home-ui">
         <div class="welcome-info">
             <h1 class="game-title">Bubble Shooter</h1>
@@ -23,6 +26,21 @@
             <button id="play-btn">&#x1F579; Play</button>
         </div>
         <canvas id="animation"></canvas>
+        <audio id="theme-audio" src="" muted="true" loop></audio>
+    </section>
+    <section id="end-game-ui">
+        <div class="result-div">
+            <span>&#128081;</span>
+            <strong>
+                score:
+            </strong>
+            <h1 id="result"></h1>
+        </div>
+        <div class="nav-btn">
+            <button id="home-btn"><img id="home-icon" src="" alt="home button"></button>
+            <button id="play-again">Play Again</button>
+        </div>
+        <audio id="game-over-audio" src="" muted="true"></audio>
     </section>
     <section id="game-ux">
         <div class="score-div">
@@ -40,6 +58,10 @@
         </div>
         <canvas id="canvas">
         </canvas>
+        <audio id="game-start-audio" src="" muted="true"></audio>
+        <audio id="shoot-audio" src="" muted="true"></audio>
+        <audio id ="bubble-shrink-audio" src="" muted="true"></audio>
+        <audio id="bubble-pop-audio" src="" muted="true"></audio>
     </section>
 </body>
 </html>
