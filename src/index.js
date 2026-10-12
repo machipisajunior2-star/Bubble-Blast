@@ -1,9 +1,10 @@
 import './styling/main.scss'
+import './animation.js'
 import gsap from 'gsap'
 import utils, { randomIntFromRange } from './utils'
 
 
-const canvas = document.querySelector('canvas')
+const canvas = document.querySelector('#canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth

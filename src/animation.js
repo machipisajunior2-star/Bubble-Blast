@@ -1,4 +1,4 @@
-import './styles/animation.scss'
+import './styling/animation.scss'
 
 const animationCanvas = document.querySelector('#animation')
 const aC = animationCanvas.getContext('2d')
@@ -57,7 +57,21 @@ function animate() {
     circles.forEach((circle) => {
         circle.update();
     });
+    console.log('working')
 }
 
 set();
 animate();
+
+
+addEventListener('resize', function () {
+    animationCanvas.width = window.innerWidth;
+    animationCanvas.height = window.innerHeight;
+    return set();
+});
+
+addEventListener("orientationchange", function () {
+    animationCanvas.width = window.innerWidth;
+    animationCanvas.height = window.innerHeight;
+    return set();
+});
