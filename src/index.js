@@ -1,4 +1,6 @@
 import './styling/main.scss'
+import gsap from 'gsap'
+import utils, { randomIntFromRange } from './utils'
 
 
 const canvas = document.querySelector('canvas')
@@ -82,9 +84,39 @@ class Pellet {
   }
 }
 
+let velocity = 1;
+
+class Bubble {
+  constructor(x, y, radius, color) {
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.color = color
+  }
+
+  draw() {
+    c.beginPath()
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    c.fillStyle = this.color
+    c.fill()
+    c.lineWidth = 1
+    c.stroke()
+    c.closePath()
+  }
+
+  update() {
+    this.draw()
+    this.x -= velocity
+    if (velocity < 6) {
+      velocity += 0.0001
+    }
+  }
+}
+
 
 let player
 let pellets
+let bubbles
 const playerRadius = 40
 const playerX = 0 - playerRadius / 3;
 const playerY = canvas.height / 2
@@ -95,6 +127,7 @@ let posY = undefined;
 function init() {
   player = []
   pellets = []
+  bubbles = []
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
   pellets.push(new Pellet(projX, posY, projRadius, 'red'))
@@ -106,6 +139,19 @@ function trigger() {
     pellets.push(new Pellet(projX, posY, projRadius, 'white'))
     }
 }
+
+
+let progress = 1000;
+function makeBubbles() {
+  setInterval(() =>{
+    const radius = randomIntFromRange(10, 55)
+    console.log(radius)
+    const x = randomIntFromRange(canvas.width, canvas.width * 2)
+    const y = randomIntFromRange((playerRadius * 2), canvas.height -
+                                (playerRadius * 2))
+    bubbles.push(new Bubble(x, y, radius, `hsl(${Math.random() * 255}, 50%, 50%)`))
+  }, progress)
+} 
 
 function animate() {
   const animationId = requestAnimationFrame(animate)
@@ -125,10 +171,29 @@ function animate() {
     }
     pellet.update()
   })
+    bubbles.forEach((bubble, i) => {
+        if (bubble.x - bubble.radius <= 0) {
+        cancelAnimationFrame(animationId);
+        }
+        pellets.forEach((pellet, j) => {
+            const dist = Math.hypot(bubble.x - pellet.x, bubble.y - pellet.y)
+            if (dist - bubble.radius - pellet.radius < 1) {
+                setTimeout(() => {
+                    bubbles.splice(i, 1)
+                }, 0)
+            } else {
+                gsap.to(bubble, {
+                    radius: bubble.radius - 10
+                })
+            }
+        })
+        bubble.update()
+  })
 }
 
 init()
 animate()
+makeBubbles()
 
 addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp') {
