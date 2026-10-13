@@ -1,0 +1,240 @@
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/main.scss ***!
+  \**********************************************************************************************************************/
+body {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#game-ux {
+  display: none;
+}
+
+.score-div {
+  position: fixed;
+  padding: 15px;
+}
+
+.score-div span {
+  color: #ee9b00;
+  font-weight: bold;
+}
+
+#score {
+  color: white;
+}
+
+#end-game-ui {
+  display: none;
+  place-items: center;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.947);
+}
+
+.result-div {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  color: #ee9b00;
+  margin-bottom: 100px;
+}
+
+#end-game-ui div span {
+  font-size: 50px;
+}
+
+#result {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.result-div strong {
+  font-size: 20px;
+}
+
+#play-again {
+  background-color: #ee9b00;
+  color: #bb3e03;
+  font-weight: bolder;
+  border-radius: 25px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#play-again:hover {
+  background-color: rgba(253, 245, 0, 0.7725490196);
+}
+
+.nav-btn {
+  display: flex;
+}
+
+#home-btn {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: #0a9396;
+  margin-right: 12px;
+}
+
+#home-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#home-btn:hover {
+  background-color: #94d2bd;
+}
+
+#pause-btn {
+  position: fixed;
+  right: 8px;
+  top: 8px;
+  border-radius: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background-color: #9b2226;
+  padding: 5px;
+  width: 45px;
+  height: 35px;
+  padding-bottom: 35px;
+}
+
+#controls {
+  display: none;
+  position: fixed;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.817);
+}
+
+#controls button {
+  width: 20%;
+  border-radius: 25px;
+  background-color: #3da49d;
+  color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.audio-btn-con {
+  position: fixed;
+  left: 48vw;
+  z-index: 999;
+}
+
+.audio-btn-con button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 5px;
+  background-color: #ff0800;
+}
+
+.audio-btn-con button img {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+  .audio-btn-con {
+    left: 44vw;
+  }
+  #controls button {
+    width: 45%;
+  }
+  #play-again {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #play-btn {
+    width: 60%;
+  }
+}
+/*!***************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs/index.js!./src/styling/animation.scss ***!
+  \***************************************************************************************************************************/
+body {
+  font-family: "Courier New";
+}
+
+#home-ui {
+  display: grid;
+}
+
+.welcome-info {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  place-content: center;
+  color: white;
+}
+
+.game-title {
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: rgba(155, 34, 38, 0.9215686275);
+  border: 3px solid #ffbf38;
+}
+
+#play-btn {
+  background-color: #9b2226;
+  border-radius: 30px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 20px;
+  color: white;
+  width: 20%;
+  font-weight: bolder;
+  letter-spacing: 20%;
+}
+
+#play-btn:hover {
+  border-color: white;
+}
+
+.instructions {
+  background-color: rgba(187, 61, 3, 0.9568627451);
+  width: 75%;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.instructions ul {
+  padding-left: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: smaller;
+  }
+  .instructions {
+    padding: 15px;
+  }
+  .game-title {
+    padding: 15px;
+  }
+  #play-btn {
+    width: 40%;
+  }
+}
+
+/*# sourceMappingURL=main.9c384821db1fdef153f9.css.map*/
