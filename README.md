@@ -34,6 +34,7 @@ VS code editor and gitbash
 
 In the project directory, you can run:
 
+### `npm run build`
 ### `npm run serve`
 
 Runs the app in the development mode.\
