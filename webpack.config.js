@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -27,14 +28,21 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
             {test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3)$/i,
                 type: 'asset/resource',
             }
-            ],
+        ],
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+        }),
         new HtmlWebpackPlugin({
             title: 'Bubble-Blast',
             filename: 'index.html',
