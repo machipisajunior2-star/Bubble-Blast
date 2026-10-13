@@ -12,11 +12,11 @@
 - Javascript.js
 
 ## Screen shot
-![image](https://github.com/user-attachments/assets/852417c4-ca00-4d38-974f-78b00328a69f)
+![image](https://github.com/user-attachments/assets/871e5384-106c-4598-9e11-369e3e962a67)
 
 ## Live Demo
 
-- [Netlify](https://canvasbubbleblast.netlify.app/)
+- [Vercel](https://bubble-blast-smoky.vercel.app/)
 
 # Getting Started with Webpack:
 
