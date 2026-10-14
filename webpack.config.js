@@ -36,6 +36,13 @@ module.exports = {
             },
             {test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3)$/i,
                 type: 'asset/resource',
+            },
+            {
+                test: /\.ico$/i,
+                type: 'asset/resource',
+                generator: {
+                filename: '[name][ext]'
+                }
             }
         ],
     },
@@ -47,6 +54,7 @@ module.exports = {
             title: 'Bubble-Blast',
             filename: 'index.html',
             template: 'src/index.html',
+            favicon: 'src/favicon.ico'
         }),
     ],
 };
