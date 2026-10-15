@@ -1,3 +1,9 @@
+// .no-touch-drag {
+//   -webkit-user-select: none;
+//   user-select: none;
+//   touch-action: none;
+// }
+
 body {
     margin: 0;
 }
@@ -145,6 +151,12 @@ canvas {
 .audio-btn-con button img {
   width: 30px;
   height: 30px;
+}
+
+#canvas .no-touch-drag {
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
 }
 
   @media only screen and (max-width: 500px) {
