@@ -69,7 +69,7 @@ class Player {
       this.y += this.velocity
     }
 
-    if (touch && this.y - this.radius >= 0 && this.y <= canvas.height - this.radius) {
+    if (touch) {
       this.y = touchMove
     }
 
@@ -222,12 +222,6 @@ function set() {
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
   playSound(gameStartFile, gameStartAudio)
-  
-  // addEventListener('touchstart', (event) => {
-  //   if (event.cancelable) {
-  //     event.preventDefault()
-  //   }
-  // }, { passive: false })
 }
 
 // Animation Loop
@@ -444,7 +438,7 @@ addEventListener('touchmove', (event) => {
 }, { passive: false })
 
 addEventListener('touchstart', (event) => {
-  event.preventDefault()
+  // event.preventDefault()
   touch = true
   shoot = true
   touchMove = event.pageY
