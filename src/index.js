@@ -224,7 +224,6 @@ function set() {
   playSound(gameStartFile, gameStartAudio)
 }
 
-// Animation Loop
 let animationId
 let posY = undefined;
 let moveUp = false;
@@ -330,7 +329,6 @@ function continueGame() {
   animate()
 }
 
-// Event Listeners
 buttons.forEach(button => {
   switch (button.id) {
     case 'play-btn':
@@ -438,7 +436,6 @@ addEventListener('touchmove', (event) => {
 }, { passive: false })
 
 addEventListener('touchstart', (event) => {
-  // event.preventDefault()
   touch = true
   shoot = true
   touchMove = event.pageY
@@ -448,7 +445,6 @@ addEventListener('touchend', () => {
   touch = false
   shoot = false
 })
-
 
 addEventListener('keyup', (event) => {
   if (event.key === 'ArrowUp') {

@@ -4,7 +4,6 @@ import muteIcon from './assets/mute.png'
 import soundOnIcon from './assets/volume.png'
 import homeIcon from './assets/home.png'
 
-
 const animationCanvas = document.querySelector('#animation')
 const playBtn = document.getElementById('play-btn')
 const homeBtn = document.getElementById('home-btn')
@@ -22,8 +21,6 @@ homeIconElement.src = homeIcon
 
 animationCanvas.width = innerWidth
 animationCanvas.height = innerHeight
-
-// Animation loop with mouse collision interaction 1
 
 animationCanvas.style.backgroundColor = '#373F51';
 
