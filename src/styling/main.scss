@@ -153,10 +153,10 @@ canvas {
   height: 30px;
 }
 
-#canvas .no-touch-drag {
+#canvas {
   -webkit-user-select: none;
   user-select: none;
-  touch-action: none;
+  // touch-action: none;
 }
 
   @media only screen and (max-width: 500px) {

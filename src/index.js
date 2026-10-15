@@ -223,11 +223,11 @@ function set() {
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
   playSound(gameStartFile, gameStartAudio)
   
-  addEventListener('touchstart', (event) => {
-    if (event.cancelable) {
-      event.preventDefault()
-    }
-  }, { passive: false })
+  // addEventListener('touchstart', (event) => {
+  //   if (event.cancelable) {
+  //     event.preventDefault()
+  //   }
+  // }, { passive: false })
 }
 
 // Animation Loop
