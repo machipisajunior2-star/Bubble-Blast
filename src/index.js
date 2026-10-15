@@ -222,7 +222,12 @@ function set() {
 
   player = new Player(playerX, playerY, playerRadius, '#7c7e83')
   playSound(gameStartFile, gameStartAudio)
-}
+  
+addEventListener('touchstart', (event) => {
+  if (event.cancelable) {
+    event.preventDefault()
+  }
+}, { passive: false })
 
 // Animation Loop
 let animationId
@@ -438,13 +443,11 @@ addEventListener('touchmove', (event) => {
 }, { passive: false })
 
 addEventListener('touchstart', (event) => {
-  if (event.cancelable) {
-    event.preventDefault()
-  }
+  event.preventDefault()
   touch = true
   shoot = true
   touchMove = event.pageY
-}, { passive: false })
+})
 
 addEventListener('touchend', () => {
   touch = false
