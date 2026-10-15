@@ -431,10 +431,12 @@ addEventListener('keydown', (event) => {
 })
 
 addEventListener('touchmove', (event) => {
+  event.preventDefault()
   touchMove = event.pageY
 })
 
 addEventListener('touchstart', (event) => {
+  event.preventDefault()
   touch = true
   shoot = true
   touchMove = event.pageY
