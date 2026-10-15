@@ -438,10 +438,13 @@ addEventListener('touchmove', (event) => {
 }, { passive: false })
 
 addEventListener('touchstart', (event) => {
+  if (event.cancelable) {
+    event.preventDefault()
+  }
   touch = true
   shoot = true
   touchMove = event.pageY
-})
+}, { passive: false })
 
 addEventListener('touchend', () => {
   touch = false
