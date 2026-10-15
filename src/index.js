@@ -431,16 +431,20 @@ addEventListener('keydown', (event) => {
 })
 
 addEventListener('touchmove', (event) => {
-  event.preventDefault()
+  if (event.cancelable) {
+    event.preventDefault()
+  }
   touchMove = event.pageY
-})
+}, { passive: false })
 
 addEventListener('touchstart', (event) => {
-  event.preventDefault()
+  if (event.cancelable) {
+    event.preventDefault()
+  }
   touch = true
   shoot = true
   touchMove = event.pageY
-})
+}, { passive: false })
 
 addEventListener('touchend', () => {
   touch = false
