@@ -69,7 +69,7 @@ class Player {
       this.y += this.velocity
     }
 
-    if (touch) {
+    if (touch - this.radius >= 0 && touch < canvas.height - this.radius && this.y - this.radius >= 0 && this.y <= canvas.height - this.radius) {
       this.y = touchMove
     }
 
